@@ -22,10 +22,7 @@ app.use(express.static("public"));
 
 let currentUserId = 1;
 
-let users = [
-  { id: 1, name: "Rares", color: "teal" },
-  { id: 2, name: "Marinela", color: "powderblue" },
-];
+let users = [];
 
 async function checkVisisted() {
   const result = await db.query("SELECT country_code FROM visited_countries JOIN users ON users.id = user_id where user_id = $1;",
